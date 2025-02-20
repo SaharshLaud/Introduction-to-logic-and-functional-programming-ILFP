@@ -1,0 +1,38 @@
+Assignment 8: CBN Closure Machine and Krivine Machine
+
+In this assignment, you will have to implement an abstract machine for a toy functional language based on the Call-by-Name  lambda calculus.
+
+The abstract syntax for lambda expressions  e ::= x |  (e1 e2) | \x.e  (where \x.e1 depicts  "\lambda x . e1") can be coded in OCaml as:
+
+type lamexp = V of string |  App of lamexp * lamexp  | Lam of string * lamexp ;;
+
+First, write an OCaml program to implement substitution in the lambda calculus correctly. You may assume an ordering of variables, and generate a unique fresh variable each time to be different from any variable used.
+
+Second, implement the Krivine machine  for call-by-name  for  the pure lambda calculus (First, assume closed terms; then see if your program works for open terms).
+
+Let closures be depicted as <<e, gamma>> where 
+
+e is a lambda expression
+
+gamma is a table of type  string -> closure
+
+
+
+Let f[ x |-> v ] denote extending/modifying function f at the entry for x.
+
+
+
+(Op) << (e1 e2), gamma>>, S   =>  <<e1, gamma>> ,  <<e1, gamma>>::S
+
+(Var)  << x, gamma>>, S   =>  gamma(x),  S
+
+(App)  << \x.e1, gamma>>, cl::S => <<e1, \gamma[x |-> cl] >>, S
+
+
+
+You need to:
+
+Define closures appropriately
+Implement the execution of the Krivine machine until it cannot make any further steps.
+Implement the "unload" function, that takes a Krivine machine configuration and unravels the resulting closure (and any stacked arguments) into a lambda term. 
+Again, you need to provide enough input cases to show your program runs correctly.  Suggestion: You may use some of the examples that encode pairing and conditionals. 

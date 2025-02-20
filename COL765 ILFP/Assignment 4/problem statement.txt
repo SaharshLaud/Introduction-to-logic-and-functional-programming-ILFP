@@ -1,0 +1,50 @@
+Assignment 4: Representing finite sets
+This functional programming assignment requires you to represent finite sets using the data type of OCaml lists, and to present the result as a module.
+
+The REPRESENTATIONAL INVARIANT will be that a set is represented as a list of elements without duplicates.  
+
+The SIGNATURE (or module type) is specified as:
+
+module type SET = 
+
+sig 
+
+  type ( 'a ) set
+
+  val emptyset : 'a set
+
+  val member : 'a  -> 'a set -> bool
+
+  val subset : 'a set -> 'a set -> bool
+
+  val equalsets: 'a set -> 'a set -> bool
+
+  val union :  'a set -> 'a set -> 'a set
+
+  val inter : 'a set -> 'a set -> 'a set 
+
+  val diff : 'a set -> 'a set -> 'a set 
+
+  val product : ('a set) -> ('b set) -> ('a * 'b) set
+
+  val power : 'a set -> ('a set) set
+
+end;;
+
+You will need to provide implementations of (at least) the following operations, which have the given informal specifications.  You  should use List module functions such as map, fold_left or fold_right, filter etc.
+
+emptyset, which represents the empty set.
+member x s, which returns true if and only if x is in s.
+subset s1 s2, which returns true if and only if s1 is a subset of s2
+equalsets s1 s2, which returns true if and only if  set s1 is equal to set s2.
+union s1 s2, which returns the union of sets s1 and s2
+inter s1 s2, which returns the intersection of s1 and s2
+diff s1 s2, which returns the set consisting of elements of s1 which are not in s2
+power s, which returns the set of subsets of s
+product s1 s2, which returns the cartesian product of s1 and s2.
+You need to show that your implementation of sets as lists 
+
+maintains the REPRESENTATIONAL INVARIANT for each operation.
+satisfies the equational laws of sets that we have learnt -- at least those for union, intersection, difference, emptyset, subset and membership -- by providing tests.  If you can, try to prove a few of these laws.
+You should also perform an analysis of the efficiency of the operations.
+(You may consider what operations may be harder or easier if duplicates were allowed.)

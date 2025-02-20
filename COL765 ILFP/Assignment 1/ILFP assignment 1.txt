@@ -1,0 +1,145 @@
+cast(srishti_rindani, sara).
+cast(ritvik_sahore, shanky_bansal).
+cast(rekha_lakhani, female_employee).
+cast(tanvi_gadkari, khyati_rana).
+cast(sundip_ved, chetan_kidwai).
+cast(ankita_sahigal, shailja).
+cast(raghu_ram, rajat_thapar).
+cast(anubha_fatehpuria, pushpa_bansal).
+cast(mehar_acharya, zoya).
+cast(babla_kochar, pravin_rana).
+cast(varun_badola, k_d_bansal).
+cast(inder_sahani, paras_jiju).
+cast(kavita, foxxy).
+cast(jyoti_rajput, varsha).
+cast(shayoni_das, hr_divya).
+cast(nikhil_mehta, aishwarya).
+cast(drishti_popat, lovely).
+cast(siksha_das, tinder_das).
+cast(syscila_sampath, tinder_girl).
+cast(prerna_sushma, raman_s_wife).
+cast(ayushi_agrawal, hr).
+cast(darsh_lakhwani, mohan).
+cast(suryansh_mishra, vishal).
+cast(alisha_martin, rahat).
+cast(nandini_sharma, nishita).
+cast(aiman_kaliya, avi).
+cast(amit_poddar, shoe_company_owner).
+cast(lokesh_mittal, lohiya).
+cast(rihan, young_aishwarya).
+cast(abhishek, ice_cream_vendor).
+cast(taral_almoula, prateek).
+cast(dushyant_wagh, dj).
+cast(karan, emcee).
+cast(akshina, young_shailja).
+cast(shubham_sapre, man_in_metro).
+cast(rohit, birju).
+cast(pankaj_kamad, sangram).
+cast(rashmi_singh, news_reporter).
+cast(himanshu_manek, dr_arora).
+cast(varun_duber, physiotherapist).
+cast(tara_prasad, saransh).
+cast(subhodh_gulati, kamal_sachdeva).
+cast(udit_parashar, stand_up_comic).
+cast(amit_singh, ca_teacher).
+cast(sandeep_mishra, lawyer).
+cast(shyam_jethnani, joshua).
+cast(hazel_arora, student_at_metro).
+cast(vikhyat_gulati, sodhi).
+cast(pravesh_mishra, pandit_ji).
+cast(dhruvi_gautam, south_delhi_guy).
+cast(sumit_singh, raman).
+cast(nihal_singh, student_1).
+cast(sahil_balani, audi_student_1).
+cast(ashish_thakur, fukeerie).
+cast(manit_kapoor, young_shanky).
+cast(nita_shah, pregnant_lady).
+cast(shivanand, burly_jaat_guy).
+cast(sanjeev_satjia, manager).
+cast(varun_gulati, balram).
+cast(kashif_khan, student).
+cast(amol, dhaba_owner).
+cast(manoj, uncle_with_dog).
+cast(priti_shriwastawa, mother_in_law).
+cast(arjun_dhingra, mc_rizz).
+cast(tejpal, khurana_uncle).
+cast(arpit_yadav, waiter).
+cast(vishal_kumar, delivery_boy).
+cast(mahadev, rickshaw_student_1).
+cast(yashwant, rickshaw_driver).
+cast(kuldeep, teacher).
+cast(deepak_daryani, jagjit_pathak).
+cast(milind_singh, varun).
+cast(sashi_mohan, palki_sir).
+cast(sunil, zoya_s_husband).
+cast(daksh, rickshaw_student_2).
+cast(himanshu_luthra, mahesh_broker).
+cast(keshav, student_at_i_kare).
+cast(adi, poster_pasting_boy).
+cast(neeraj, ac_repair_guy).
+
+family(shanky_bansal, pushpa_bansal). % Shanky is Pushpa's son
+family(khyati_rana, pravin_rana). % Khyati is Pravin's daughter
+friend(shanky_bansal, priya).
+friend(priya, shanky_bansal).
+friend(shanky_bansal, ajay).
+friend(ajay, shanky_bansal).
+
+
+works_at(shanky_bansal, lohiya_llp).
+works_at(nishita, kidwainco).
+
+
+
+Output for queries:
+works_at(CHARACTER, _), cast(ACTOR, CHARACTER).
+?- works_at(CHARACTER, _), cast(ACTOR, CHARACTER).
+false
+CHARACTER = nishita, ACTOR = nandini_sharma
+CHARACTER = shanky_bansal, ACTOR = ritvik_sahore
+parsing query: works_at(CHARACTER,_),cast(ACTOR,CHARACTER) ok!
+?- works_at(CHARACTER, COMPANY).
+false
+CHARACTER = nishita, COMPANY = kidwainco
+CHARACTER = shanky_bansal, COMPANY = lohiya_llp
+parsing query: works_at(CHARACTER,COMPANY) ok!
+?- consult
+parsing program: ok!
+?- friend(CHARACTER, _), cast(ACTOR, CHARACTER).
+false
+CHARACTER = shanky_bansal, ACTOR = ritvik_sahore
+CHARACTER = shanky_bansal, ACTOR = ritvik_sahore
+parsing query: friend(CHARACTER,_),cast(ACTOR,CHARACTER) ok!
+?- friend(CHARACTER, FRIEND_CHARACTER).
+false
+CHARACTER = ajay, FRIEND_CHARACTER = shanky_bansal
+CHARACTER = shanky_bansal, FRIEND_CHARACTER = ajay
+CHARACTER = priya, FRIEND_CHARACTER = shanky_bansal
+CHARACTER = shanky_bansal, FRIEND_CHARACTER = priya
+parsing query: friend(CHARACTER,FRIEND_CHARACTER) ok!
+?- consult
+parsing program: ok!
+?- friend(CHARACTER, FRIEND_CHARACTER).
+uncaught exception: error(existence_error(procedure,friend/2),top_level/0)
+parsing query: friend(CHARACTER,FRIEND_CHARACTER) ok!
+?- family(CHARACTER, _), cast(ACTOR, CHARACTER).
+false
+CHARACTER = khyati_rana, ACTOR = tanvi_gadkari
+CHARACTER = shanky_bansal, ACTOR = ritvik_sahore
+parsing query: family(CHARACTER,_),cast(ACTOR,CHARACTER) ok!
+?- family(CHARACTER, RELATED_CHARACTER).
+false
+CHARACTER = khyati_rana, RELATED_CHARACTER = pravin_rana
+CHARACTER = shanky_bansal, RELATED_CHARACTER = pushpa_bansal
+parsing query: family(CHARACTER,RELATED_CHARACTER) ok!
+?- cast(ACTOR, shanky_bansal).
+false
+ACTOR = ritvik_sahore
+parsing query: cast(ACTOR,shanky_bansal) ok!
+?- cast(ACTOR, CHARACTER).
+ACTOR = rekha_lakhani, CHARACTER = female_employee
+ACTOR = ritvik_sahore, CHARACTER = shanky_bansal
+ACTOR = srishti_rindani, CHARACTER = sara
+parsing query: cast(ACTOR,CHARACTER) ok!
+?- consult
+parsing program: ok!

@@ -1,0 +1,27 @@
+Assignment 2: Vectors represented using lists
+Vectors
+
+In this assignment, you will have to model n-dimensional vectors using OCaml lists over the OCaml type float.  (Please read the online documentation on OCaml about the float type, used for representing Real numbers.  Integers are not automatically coerced into floats.  And the operations of addition etc. are written slightly differently -- gor example,  addition is written +. and *. is used for multiplication of floats.)
+
+You should use as many functions provided by the OCaml  List module, particularly map and fold_left etc.
+
+
+
+Define a type called vector  -- an n-dimensional vector will be represented as a float list of length n).
+Also define an exception DimError which is raised when arguments to an operation do not have the corrected dimension(s).
+Now you will have to implement the following operations:
+
+zero:  int ->  vector,  given a positive integer n, return the representation of the zero vector of fixed dimension n.
+How will you represent the unit vectors of an n-dimensional vector space on a standard basis (where the axes are assumed orthogonal to one another)?
+dim:  vector -> int, which given a vector, v   returns its dimension.
+opp: vector -> vector, which given a vector v, returns a vector of the same dimension and  magnitude, but in the opposite direction.
+addv: vector -> vector -> vector,  which given vectors v_1 and v_2 of the same dimension, returns their sum vector v_1+v_2.     Check that your implementation satisfies commutativity, associativity,  identity and inverse laws of vector addition.
+subv: vector -> vector -> vector,  which given vectors v_1 and v_2 of the same dimension, returns the vector v_1 - v_2.
+scalarmult: float -> vector -> vector, which given a float c and  vector v, returns the vector cv, that is v with each component scaled by c.  Verify that your implementation ensures that scalar multiplication distributes over vector addition
+dotprod:  vector -> vector -> float, which given two  vectors v_1 and v_2 of the same dimension, returns their scalar product or dot product v_1 • v_2.  Is dotprod commutative?
+norm:  vector -> float, which given a vector v, returns its magnitude || v ||. 
+normalise: vector -> vector, that given a vector v, returns a vector of unit magnitude but in the same direction. 
+parallel: vector -> vector -> bool, which given two  vectors v_1 and v_2 of the same dimension, checks whether  v_1 and v_2 are parallel (i.e., in the same direction, but possibly not of the same magnitude) or not.
+[ For 3-dimensional vectors only.]  crossprod: vector -> vector -> vector, where given 3-dimensional vectors v_1 and v_2 (in the standard basis), returns  the 3-dimensional vector that is their cross product v_1 x v_2.  Verify that your implementation satisfies the laws of cross product -- that it is, e.g., v_2 x v_1  = opp (v_1 x v_2) 
+[BONUS} rotate: vector -> (vector list) -> vector, which given an n-dimensional vector v (on a standard basis), and n linearly independent basis vectors [v_1, …, v_n], returns the representation of vector v but in the new basis. How can you check if v_1, …, v_n are linearly independent of one another?
+{BONUS]  Define the box product of three vectors v_1, v_2, v_3, defined as the scalar v_1 • (v_2 x v_3)

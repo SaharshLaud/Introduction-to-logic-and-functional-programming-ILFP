@@ -1,0 +1,20 @@
+Assignment 6: Propositional Resolution Engine
+
+In this assignment, you will write in OCaml a simplified version of a SLD Propositional Resolution algorithm for Horn Clauses.
+
+You will first define an OCaml data type to represent the structure of a legitimate Horn Clause propositional program.
+
+A program is a sequence of clauses. 
+ A clause can either be a fact or a rule. A fact has a head but no body.  A rule has a head and a body.  
+The head is a single proposition.  A body is a sequence of propositions.
+A goal is a  sequence of propositions (referred to as subgoals).
+
+
+Program execution proceeds as follows:
+
+Replace the first subgoal (proposition) from a list of goals by the list of propositions obtained by resolving it (the first subgoal) with the head of a program clause.
+
+You also need to develop a back-tracking strategy to explore the resolution search space, when a sub-goal cannot be satisfied.
+
+The only control data structures you need are lists: whether as stacks or queues (and perhaps indexes into them).
+

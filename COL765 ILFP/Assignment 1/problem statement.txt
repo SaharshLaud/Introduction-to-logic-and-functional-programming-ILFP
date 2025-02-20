@@ -1,0 +1,24 @@
+Assignment 1: Programming with Relations
+The purpose of this assignment is to get you to start programming with Prolog, and get familiar with its syntax and execution model.   Since this assignment is given early in the course, it is meant to be a little light and provide you with some recreation.   Please try to pick very different data sets from your friends.  My goal is to have a large collection of culturally interesting genealogy databases, so novelty will be rewarded.
+
+Take a reasonably large family from a book or soap opera or movie franchise, with many characters (at least 40) and at least 3-4 generations.
+
+The more complicated the family structure, and the more the marriages and children, the better.
+
+Some examples are:
+
+The Mahabharata, the Bible (OT), The Ramayana, Star Wars, The Lord of the Rings, Greek mythology, Roman mythology, Egyptian mythology, Viking Sagas, Nibelungenlied, One Hundred Years of Solitude, Midnight's Children, Dynasty, Kyunki Saas Bhi Kabhi Bahu Thi, ...
+
+Or  genealogies of various historical dynasties (though these usually only record the male descendants).
+
+Or movie stars (in Bollywood, or Hollywood,...)
+
+Create a database using the basic predicates: male(Y), female(X), child(X,Y), married(A,B).
+
+Define as many relationships as you can think of:  son, daughter, uncle, aunt, grandfather, nephew, cousin, sister-in-law, mother-in-law, daughter-in-law, etc.  In fact, I encourage you to use the word in your mother tongue for that relationship.
+
+Formulate and run queries (and support your answers by referencing pages from texts, or hyperlinks to wikipedia).  
+
+Try different input/output modes.
+
+[No late submissions will be considered]

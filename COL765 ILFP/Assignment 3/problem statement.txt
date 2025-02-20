@@ -1,0 +1,16 @@
+Assignment 3: A simple boolean evaluator and compiler
+In this assignment, you will be expected to model a simple language of boolean expressions, and write an evaluator as well as a compiler to opcodes evaluated using a stack machine. 
+
+1. Define a boolean expression language given by the data type expb, to include operations such as constants T and F,  (unary) negation Not, and binary operations of conjunction And, disjunction Or (and implication Imply and  Bi-implication Iff, and any other expressions which you can think of.  
+
+2.  Next extend the definitional interpreter evalb to provide a standard semantics to all these boolean expressions.  
+
+3.  Then define a data type opcodeb to encode operations on the booleans, 
+
+4. Define the function compileb to generate code for boolean expressions in terms of the opcodes.
+
+5. Adapt the definition of the stack machine execution to define a function stkmcb by providing execution rules for the operations you have defined above.
+
+6. State the theorems that your compile-and-execute (on the stack machine) implementation of these operations is correct  (sound and complete) with respect to the standard semantics given by evalb.
+
+7. Bonus:  Prove these theorems.
